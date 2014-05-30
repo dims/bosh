@@ -62,7 +62,6 @@ group :development, :test do
   gem 'webmock'
   gem 'fakefs'
   gem 'simplecov'
-  gem 'simplecov-rcov'
   gem 'vcr'
 
   # Explicitly do not require serverspec dependency

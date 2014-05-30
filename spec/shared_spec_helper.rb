@@ -1,6 +1,17 @@
 # This file is included by every sub-project's spec_helper
-require 'rspec'
 
+require 'simplecov'
+SimpleCov.configure do
+  root          File.expand_path('../..', __FILE__)
+  merge_timeout 3600
+  # command name is injected by the spec.rake runner
+  if ENV['BOSH_BUILD_NAME']
+    command_name ENV['BOSH_BUILD_NAME']
+  end
+end
+SimpleCov.start
+
+require 'rspec'
 RSpec.configure do |config|
   config.deprecation_stream = StringIO.new
 
